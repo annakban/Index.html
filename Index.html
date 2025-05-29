@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tester de Larida Bold</title>
+  <style>
+    @font-face {
+      font-family: 'Larida Bold';
+      src: url('https://victorortizzz.github.io/fonts-hosting/Larida-Bold.woff') format('woff');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Larida Bold', sans-serif;
+      margin: 0;
+      padding: 1.5rem;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
+    #text-input {
+      font-family: inherit;
+      font-size: 48px;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      background: transparent;
+      max-height: 60%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .controls {
+      padding-top: 1rem;
+    }
+
+    input[type="range"] {
+      width: 25%;
+    }
+
+    label {
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <input
+    type="text"
+    id="text-input"
+    placeholder="Larida Tester"
+    maxlength="30"
+  />
+
+  <div class="controls">
+    <label for="font-size-slider">Text Size</label>
+    <input
+      type="range"
+      id="font-size-slider"
+      min="20"
+      max="70"
+      value="48"
+      oninput="adjustFontSize(this.value)"
+    />
+  </div>
+
+  <script>
+    function adjustFontSize(size) {
+      document.getElementById('text-input').style.fontSize = size + 'px';
+    }
+  </script>
+</body>
+</html>
